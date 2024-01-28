@@ -16,32 +16,17 @@ export const blogListQuery = groq`*[_type == "post"]{
   } | order(_createdAt desc) [0...6]
   `
 
-// export const blogListQuery = groq`*[_type=='post'] {
-//     ...,
-//     author->,
-//     categories[]->
-//   } | order(_createdAt desc)
-//  `;
-
-
-
 type blogListProps = {
     posts: Post[]
 }
 
 
 export default function HomeBlogList({posts}: blogListProps) {
-// console.log("posts", posts);
-//   console.log("posts", posts[3].mainImage);
   return (
-    <div
-        // className='
-        // col-span-2
-        // '
-    >
+    <div>
 
         <hr className=' mb-10 mx-10'/>
-        <h1 className='px-12 gap-10 '>Home Blog List</h1>
+        {/* <h1 className='px-12 gap-10 '>Home Blog List</h1> */}
         <div 
         className='grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24'
         >

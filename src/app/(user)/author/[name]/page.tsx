@@ -15,7 +15,6 @@ interface PageProps {
   
 
 async function page({params: {name}}: PageProps) {
-console.log("name", name);
 
 const authorBlogListQuery = groq`*[_type == "post" && author->slug.current == $name]{
     ...,  
@@ -31,7 +30,6 @@ const authorBlogListQuery = groq`*[_type == "post" && author->slug.current == $n
   `
 
     const blogListData = await client.fetch(authorBlogListQuery,{name: name})
-    console.log("blogListData", blogListData);
 
   return (
     <div>
