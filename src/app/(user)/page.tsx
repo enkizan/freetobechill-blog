@@ -3,7 +3,7 @@ import {LiveQuery} from 'next-sanity/preview/live-query'
 import DocumentsCount, {documentsCountQuery} from '../../components/DocumentsCount'
 import PreviewDocumentsCount from '../../components/PreviewDocumentsCount'
 import {sanityFetch} from '../../lib/sanity.fetch'
-import BlogList, {blogListQuery} from '@/components/BlogList'
+import HomeBlogList, {blogListQuery} from '@/components/HomeBlogList'
 import { client } from '@/lib/sanity.client'
 
 
@@ -38,7 +38,7 @@ export default async function IndexPage() {
         as={PreviewDocumentsCount}
       >
         <div>Show Bloglist4</div>
-      <BlogList posts={blogListData as Post[]} />
+      <HomeBlogList posts={blogListData as Post[]} />
       </LiveQuery>
 
 
@@ -49,7 +49,7 @@ export default async function IndexPage() {
       <div>
         {/* <div>Not in preview mode </div> */}
         {/* <DocumentsCount data={data} /> */}
-        <BlogList posts={blogListData as Post[]} />
+        <HomeBlogList posts={blogListData as Post[]} />
 
 
       </div>

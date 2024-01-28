@@ -1,6 +1,7 @@
 import { urlFor } from '@/lib/urlFor';
 import {groq} from 'next-sanity';
 import Image from 'next/image';
+import  ClientSideRoute  from '@/components/ClientSideRoute';
 
 
 export const blogListQuery = groq`*[_type == "post"]{
@@ -29,7 +30,7 @@ type blogListProps = {
 }
 
 
-export default function BlogList({posts}: blogListProps) {
+export default function HomeBlogList({posts}: blogListProps) {
 // console.log("posts", posts);
 //   console.log("posts", posts[3].mainImage);
   return (
@@ -38,13 +39,18 @@ export default function BlogList({posts}: blogListProps) {
         // col-span-2
         // '
     >
+
         <hr className=' mb-10 mx-10'/>
-        {/* <h1 className='px-12 gap-10 '>Blog List</h1> */}
+        <h1 className='px-12 gap-10 '>Home Blog List</h1>
         <div 
         className='grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24'
         >
             {posts.map((post: any) => (
-                <div key={post.slug} className='
+                <ClientSideRoute route={`/post/${post.slug}`} key={post.slug}>
+                <div>TEST SLUG: {post.slug}</div>
+                <div 
+                // key={post.slug} 
+                className='
                     flex 
                     flex-col
                     my-5
@@ -52,10 +58,6 @@ export default function BlogList({posts}: blogListProps) {
                     group
                     cursor-pointer
                     '>
-                    {/* <h1
-                        className='text-2xl'
-                    >{post.title}</h1> */}
-                    
                     <div className='
                                     relative 
                                     w-full
@@ -123,6 +125,7 @@ export default function BlogList({posts}: blogListProps) {
                     <div className='indent-8 text-stone-700 px-2 line-clamp-2'>{post.description}</div>
                     <p className='font-light text-end pt-5 text-stone-500 px-2'>by {post.author}</p>
                 </div>
+                </ClientSideRoute>
             ))}
 
         </div>

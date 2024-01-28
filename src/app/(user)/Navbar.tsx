@@ -28,7 +28,7 @@ function Navbar() {
                     cursor-pointer
           ">Home</p>
           </Link>
-        <Link href="/">
+        <Link href="/author/cheungfan">
           <p className="
                      mx-8 
                      hover:scale-110
@@ -38,7 +38,7 @@ function Navbar() {
                      cursor-pointer
            ">Cheung Fan's Blog</p>
           </Link>
-        <Link href="/">
+        <Link href="/author/abi">
           <p className="
                     mx-8 
                     hover:scale-110
@@ -48,7 +48,7 @@ function Navbar() {
                     cursor-pointer
           ">Abi's Blog</p>
           </Link>
-        <Link href="/">
+        <Link href="/author/winwinho">
           <p className="
                     mx-8 
                     hover:scale-110
@@ -58,6 +58,16 @@ function Navbar() {
                     cursor-pointer
           ">Win win Ho's Blog </p>
           </Link>
+        <Link href="/author/tung-san">
+        <p className="
+                  mx-8 
+                  hover:scale-110
+                  transition-transform 
+                  duration-200 
+                  ease-out
+                  cursor-pointer
+        ">Tung San's Dev test </p>
+        </Link>
         <Link href="/aboutus">
           <p className="
                     mx-8 
