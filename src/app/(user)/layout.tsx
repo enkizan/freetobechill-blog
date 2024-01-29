@@ -6,7 +6,7 @@ import Navbar from './Navbar'
 import dynamic from 'next/dynamic'
 import {draftMode} from 'next/headers'
 import {token} from '../../lib/sanity.fetch'
-import StudioNavbarTest from '@/components/StudioNavbarTEST'
+// import StudioNavbarTest from '@/components/StudioNavbarTEST'
 
 const inter = Inter({ subsets: ['latin'] })
 const PreviewProvider = dynamic(() => import('../../components/PreviewProvider'))

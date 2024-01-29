@@ -1,19 +1,7 @@
 
 import Link from 'next/link';
-import { useState } from 'react';
-import {draftMode} from 'next/headers'
 
 function Navbar() {
-  // const [previewModeState,setPreviewModeState] = useState(true)
-  // const handlePreviewMode = () => {
-  //   if(!previewModeState){
-  //     setPreviewModeState(true)
-  //     draftMode().enable();
-  //   }else{
-  //     setPreviewModeState(false)
-  //     draftMode().disable();
-  //   }
-  // }
 
   return (
     <div>
@@ -36,7 +24,7 @@ function Navbar() {
                      duration-200 
                      ease-out
                      cursor-pointer
-           ">Cheung Fan's Blog</p>
+           ">Cheung Fan's blog</p>
           </Link>
         <Link href="/author/abi">
           <p className="
@@ -46,7 +34,7 @@ function Navbar() {
                     duration-200 
                     ease-out
                     cursor-pointer
-          ">Abi's Blog</p>
+          ">Abi's blog</p>
           </Link>
         <Link href="/author/winwinho">
           <p className="
@@ -56,7 +44,7 @@ function Navbar() {
                     duration-200 
                     ease-out
                     cursor-pointer
-          ">Win win Ho's Blog </p>
+          ">Win win Ho's blog </p>
           </Link>
         <Link href="/author/tung-san">
         <p className="

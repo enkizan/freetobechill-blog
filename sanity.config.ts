@@ -11,10 +11,10 @@ import {deskTool} from 'sanity/desk'
 import {apiVersion, dataset, projectId} from './sanity/env'
 import {schema} from './sanity/schema'
 // import MyLogo from '@/components/MyLogo'
-import { myTheme } from "./src/styles/theme";
-import MyLogo from '@/components/MyLogo'
-import StudioNavbar from '@/components/StudioNavbar'
-import StudioNavbarTest from '@/components/StudioNavbarTEST'
+// import { myTheme } from "./src/styles/theme";
+// import MyLogo from '@/components/MyLogo'
+// import StudioNavbar from '@/components/StudioNavbar'
+// import StudioNavbarTest from '@/components/StudioNavbarTEST'
 
 
 

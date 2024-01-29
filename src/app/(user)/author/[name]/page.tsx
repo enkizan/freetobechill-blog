@@ -9,10 +9,6 @@ interface PageProps {
     }
 }
 
-    // console.log("outside name", name);
-
-
-  
 
 async function page({params: {name}}: PageProps) {
 
@@ -33,7 +29,7 @@ const authorBlogListQuery = groq`*[_type == "post" && author->slug.current == $n
 
   return (
     <div>
-      <div> Author's name: {name}</div>
+      <div> Author name: {name}</div>
       <div> Display author's blog list. </div>
       {/* <AuthorBlogList posts={blogListData as Post[]}/> */}
     <AuthorBlogList author={name} posts={blogListData} />
