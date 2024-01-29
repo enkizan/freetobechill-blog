@@ -24,7 +24,7 @@ function Navbar() {
                      duration-200 
                      ease-out
                      cursor-pointer
-           ">Cheung Fan's blog</p>
+           ">Cheung Fan</p>
           </Link>
         <Link href="/author/abi">
           <p className="
@@ -34,7 +34,7 @@ function Navbar() {
                     duration-200 
                     ease-out
                     cursor-pointer
-          ">Abi's blog</p>
+          ">Abi</p>
           </Link>
         <Link href="/author/winwinho">
           <p className="
@@ -44,7 +44,7 @@ function Navbar() {
                     duration-200 
                     ease-out
                     cursor-pointer
-          ">Win win Ho's blog </p>
+          ">WinWin Ho </p>
           </Link>
         <Link href="/author/tung-san">
         <p className="

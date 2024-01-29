@@ -29,8 +29,8 @@ const authorBlogListQuery = groq`*[_type == "post" && author->slug.current == $n
 
   return (
     <div>
-      <div> Author name: {name}</div>
-      <div> Display author's blog list. </div>
+      {/* <div> Author name: {name}</div> */}
+      {/* <div> Display author's blog list. </div> */}
       {/* <AuthorBlogList posts={blogListData as Post[]}/> */}
     <AuthorBlogList author={name} posts={blogListData} />
     </div>

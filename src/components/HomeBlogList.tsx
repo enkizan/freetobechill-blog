@@ -32,7 +32,7 @@ export default function HomeBlogList({posts}: blogListProps) {
         >
             {posts.map((post: any) => (
                 <ClientSideRoute route={`/post/${post.slug}`} key={post.slug}>
-                <div>TEST SLUG: {post.slug}</div>
+                {/* <div>TEST SLUG: {post.slug}</div> */}
                 <div 
                 // key={post.slug} 
                 className='

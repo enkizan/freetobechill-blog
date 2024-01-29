@@ -24,7 +24,7 @@ export default function AuthorBlogList({author , posts}: authorBlogListProps) {
         >
             {posts.map((post: any) => (
                 <ClientSideRoute route={`/post/${post.slug}`} key={post.slug}>
-                <div>TEST SLUG: {post.slug}</div>
+                {/* <div>TEST SLUG: {post.slug}</div> */}
                 <div 
                 // key={post.slug} 
                 className='
