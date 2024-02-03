@@ -8,12 +8,15 @@ type Base = {
 
 interface Post extends Base {
     author: Author;
+    authorName: string;
     body: Block[];
     categories: Category[];
     mainImage: Image;
     slug: Slug;
+    slugCurrent: string;
     title: string;
     description: string;
+    publishedAt: Date;
 }
 
 interface Author extends Base {

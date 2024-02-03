@@ -1,11 +1,17 @@
 
+'use client'
+import { Button, Drawer } from '@geist-ui/core';
 import Link from 'next/link';
+import React from 'react';
+import { useState } from 'react';
 
 function Navbar() {
+  const [state, setState] = React.useState(false)
 
+  
   return (
-    <div>
-      <div className=" my-5 flex items-center justify-center p-3 space-x-2 text-1xl text-black font-['serif'] font-light">
+    <div className='hidden md:block'>
+      <div className=" my-5 flex items-center justify-center p-3 space-x-2 text-xl text-black font-['serif'] font-light '">
         <Link href="/">
           <p className="
                     mx-8 
@@ -46,7 +52,7 @@ function Navbar() {
                     cursor-pointer
           ">WinWin Ho </p>
           </Link>
-        <Link href="/author/tung-san">
+        {/* <Link href="/author/tung-san">
         <p className="
                   mx-8 
                   hover:scale-110
@@ -55,7 +61,7 @@ function Navbar() {
                   ease-out
                   cursor-pointer
         ">Tung San's Dev test </p>
-        </Link>
+        </Link> */}
         <Link href="/aboutus">
           <p className="
                     mx-8 

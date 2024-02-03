@@ -1,4 +1,5 @@
 import AuthorBlogList from "@/components/AuthorBlogList";
+import { authorBlogListQuery } from "@/components/api";
 import { client } from "@/lib/sanity.client";
 import {groq} from 'next-sanity';
 
@@ -11,19 +12,6 @@ interface PageProps {
 
 
 async function page({params: {name}}: PageProps) {
-
-const authorBlogListQuery = groq`*[_type == "post" && author->slug.current == $name]{
-    ...,  
-    "slug": slug.current,
-    "authorSlug": author->slug.current,
-    "author": author->name,
-    "authorAll": author->slug,
-    "categories": categories[]->title,
-    "mainImage": mainImage.asset->url,
-    "text": body[].children[].text,
-    "description": description,
-  } | order(_createdAt desc) [0...6]
-  `
 
     const blogListData = await client.fetch(authorBlogListQuery,{name: name})
 

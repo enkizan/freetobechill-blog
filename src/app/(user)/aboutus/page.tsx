@@ -6,12 +6,13 @@ interface dashboardProps {}
 const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const page = async () => {
-    await wait(5000);
-    
+    // await wait(5000);
+    // const {data} = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
 
-    const {data} = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
-
-        return  <div>{JSON.stringify(data)}</div>
+        return  <div>
+            {/* {JSON.stringify(data)} */}
+            About us 
+            </div>
 }
 
 export default page
