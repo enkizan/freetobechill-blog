@@ -16,23 +16,23 @@ interface Props {
 // [...postid] : match any number of segments [ .com/post/123/abc/5566 ]
 
 
-// export const revalidate = 60; // revalidate this page every 60 seconds
+export const revalidate = 60; // revalidate this page every 60 seconds
 
-// export async function generateStaticParams() {
-//     const query = groq`*[_type=='post']
-//       {
-//         slug
-//       }`;
+export async function generateStaticParams() {
+    const query = groq`*[_type=='post']
+      {
+        slug
+      }`;
   
-//     const slugs: Post[] = await client.fetch(query);
-//     const slugRoutes = slugs.map((slug) => slug.slug.current);
+    const slugs: Post[] = await client.fetch(query);
+    const slugRoutes = slugs.map((item) => item.slugCurrent);
   
-//     return slugRoutes.map((slug) => ({
-//       params: {
-//         slug: slug,
-//       },
-//     }));
-//   }
+    return slugRoutes.map((slug) => ({
+      params: {
+        slug: slug,
+      },
+    }));
+  }
 
 async function Post({ params: { slug } }: Props) {
 
