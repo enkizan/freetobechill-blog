@@ -16,35 +16,35 @@ export default async function IndexPage() {
 
 
 
-  // if(previewDrafts){
+  if(previewDrafts){
     
-  //   return (
-  //     <div>
-  //       {/* What preview mode for ?? */}
-  //       <div>In preview mode :  </div>
-  //     <LiveQuery
-  //       enabled={draftMode().isEnabled}
-  //       query={documentsCountQuery}
-  //       initialData={data}
-  //       as={PreviewDocumentsCount}
-  //     >
-  //       <DocumentsCount data={data} />
-  //     </LiveQuery>
+    return (
+      <div>
+        {/* What preview mode for ?? */}
+        <div>In preview mode :  </div>
+      <LiveQuery
+        enabled={draftMode().isEnabled}
+        query={documentsCountQuery}
+        initialData={data}
+        as={PreviewDocumentsCount}
+      >
+        <DocumentsCount data={data} />
+      </LiveQuery>
 
-  //     <LiveQuery
-  //       enabled={draftMode().isEnabled}
-  //       query={blogListQuery}
-  //       initialData={blogListData}
-  //       as={PreviewDocumentsCount}
-  //     >
-  //       <div>Show Bloglist4</div>
-  //     <HomeBlogList listPosts={blogListData as Post[]} />
-  //     </LiveQuery>
+      <LiveQuery
+        enabled={draftMode().isEnabled}
+        query={blogListQuery}
+        initialData={blogListData}
+        as={PreviewDocumentsCount}
+      >
+        <div>Show Bloglist4</div>
+      <HomeBlogList listPosts={blogListData as Post[]} />
+      </LiveQuery>
 
 
-  //     </div>
-  //   ) 
-  // }else{
+      </div>
+    ) 
+  }else{
     return (
       <div>
         {/* <div>Not in preview mode </div> */}
@@ -54,5 +54,5 @@ export default async function IndexPage() {
 
       </div>
     )
-  // }
+  }
 }
