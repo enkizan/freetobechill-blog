@@ -12,7 +12,6 @@ export default async function IndexPage() {
   const previewDrafts = process.env.SANITY_API_PREVIEW_DRAFTS === 'true'
   const data = await sanityFetch<number>({previewDrafts,query: documentsCountQuery, tags: ['post']})
   const blogListData = await client.fetch(blogListQuery)
-  // console.log("blogListData", blogListData);
 
 
 
