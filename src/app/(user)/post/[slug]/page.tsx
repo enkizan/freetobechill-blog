@@ -52,7 +52,7 @@ async function Post({ params: { slug } }: Props) {
           <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
             <Image
               className="object-cover object-center mx-auto"
-              src={urlFor(post.mainImage).url()}
+              src={urlFor(post.mainImage && post.mainImage).url()}
               alt={post.author.name}
               fill
             />
@@ -73,7 +73,7 @@ async function Post({ params: { slug } }: Props) {
               <div className="flex items-center space-x-2">
                 <Image
                   className="rounded-full"
-                  src={urlFor(post.author.image).url()}
+                  src={urlFor(post.author.image && post.author.image).url()}
                   alt={post.authorName}
                   height={40}
                   width={40}

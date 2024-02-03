@@ -9,7 +9,7 @@ export const RichTextComponents = {
         <div className="relative w-full h-96 m-10 mx-auto">
           <Image
             className=" object-contain"
-            src={urlFor(value).url()}
+            src={urlFor(value && value).url()}
             alt="Blog Post Image"
             fill
           />

@@ -60,7 +60,7 @@ function ReactStrapCarousel({ carouselPosts }: CarouselProps) {
               object-center
               rounded-lg
               '
-            src={urlFor(item.mainImage).url()}
+            src={urlFor(item.mainImage && item.mainImage).url()}
             // width={200}
             // height={200}
             alt={item.authorName}

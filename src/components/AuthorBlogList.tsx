@@ -62,7 +62,7 @@ className='grid grid-cols-1 lg:grid-cols-2 px-10 gap-10 gap-y-0 sm:gap-y-16 pb-2
                                 rounded-lg
                                 lg:object-center
                                 ' 
-                            src={urlFor(post.mainImage).url()} 
+                            src={urlFor(post.mainImage && post.mainImage).url()} 
                             // width={200}
                             // height={200}
                             alt={post.author} 
