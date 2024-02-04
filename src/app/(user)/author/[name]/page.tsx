@@ -24,7 +24,6 @@ export async function generateStaticParams() {
 
 
 async function page({params: {name}}: PageProps) {
-console.log("name", name);
 
     const blogListData = await client.fetch(authorBlogListQuery,{name: name})
 

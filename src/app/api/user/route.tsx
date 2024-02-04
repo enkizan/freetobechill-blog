@@ -5,7 +5,7 @@ export async function GET(req: NextRequest){
     // Curl TEST : curl -X GET "http://localhost:3000/api/user?testParam=123TestParam" -H  "accept: application/json"
     const { searchParams } = new URL(req.url)
     const mySearchParams = searchParams.get("testParam")
-    console.log("mySearchParams", mySearchParams);
+    // console.log("mySearchParams", mySearchParams);
     
 
     return new Response (JSON.stringify({message: "Log: GET Test"}));
