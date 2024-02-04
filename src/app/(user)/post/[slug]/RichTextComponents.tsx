@@ -7,12 +7,14 @@ export const RichTextComponents = {
     image: ({ value }: any) => {
       return (
         <div className="relative w-full h-96 m-10 mx-auto">
-          <Image
-            className=" object-contain"
-            src={urlFor(value && value).url()}
-            alt="Blog Post Image"
-            fill
-          />
+          {value && (
+            <Image
+              className=" object-contain"
+              src={urlFor( value ).url()}
+              alt="Blog Post Image"
+              fill
+            />
+          )}
         </div>
       );
     },

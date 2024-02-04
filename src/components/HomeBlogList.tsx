@@ -64,19 +64,22 @@ export default function HomeBlogList({ listPosts }: blogListProps) {
                                 {post.mainImage && (
                                     <div className='w-full h-full md:h-full'>
                                         <div className=' relative rounded-lg w-full h-full bg-stone-200 '>
-                                            <Image
-                                                className='
-                                                    object-cover
-                                                    object-left
-                                                    rounded-lg
-                                                    lg:object-center
-                                                    '
-                                                src={urlFor(post.mainImage && post.mainImage).url()}
-                                                // width={200}
-                                                // height={200}
-                                                alt={post.authorName}
-                                                fill={true}
-                                            />
+                                            {post.mainImage && (
+                                                <Image
+                                                    className='
+                                                        object-cover
+                                                        object-left
+                                                        rounded-lg
+                                                        lg:object-center
+                                                        '
+                                                    src={urlFor( post.mainImage).url()}
+                                                    // width={200}
+                                                    // height={200}
+                                                    alt={post.authorName}
+                                                    fill={true}
+                                                />
+                                            )}
+
                                             <div className='
                                             absolute 
                                             bottom-0

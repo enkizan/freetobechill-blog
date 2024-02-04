@@ -54,20 +54,21 @@ className='grid grid-cols-1 lg:grid-cols-2 px-10 gap-10 gap-y-0 sm:gap-y-16 pb-2
             {post.mainImage && (
                 <div className='w-full h-full md:h-full'>
                     <div className=' relative rounded-lg w-full h-full bg-stone-200 '>
-
-                        <Image
-                            className='
-                                object-cover
-                                object-left
-                                rounded-lg
-                                lg:object-center
-                                ' 
-                            src={urlFor(post.mainImage && post.mainImage).url()} 
-                            // width={200}
-                            // height={200}
-                            alt={post.author} 
-                            fill={true}
-                            />
+                        {post.mainImage && (
+                            <Image
+                                className='
+                                    object-cover
+                                    object-left
+                                    rounded-lg
+                                    lg:object-center
+                                    ' 
+                                src={urlFor(post.mainImage).url()} 
+                                // width={200}
+                                // height={200}
+                                alt={post.author} 
+                                fill={true}
+                                />
+                        )}
 
                             <div className='absolute bottom-0 w-full bg-opacity-30 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-1 sm:p-5 flex flex-col justify-between '>
                                 <p className='text-sm sm:text-l font-semibold px-3'>{post.title}</p>

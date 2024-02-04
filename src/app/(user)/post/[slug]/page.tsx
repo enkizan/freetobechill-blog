@@ -50,12 +50,14 @@ async function Post({ params: { slug } }: Props) {
       <section className="space-y-2 border border-[#fffdfa] text-white">
         <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
           <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
+          {post.mainImage && (
             <Image
               className="object-cover object-center mx-auto"
-              src={urlFor(post.mainImage && post.mainImage).url()}
+              src={urlFor(post.mainImage).url()}
               alt={post.author.name}
               fill
             />
+          )}
           </div>
 
           <section className="p-5 bg-[#464644] w-full">
@@ -71,13 +73,15 @@ async function Post({ params: { slug } }: Props) {
                 </p>
               </div>
               <div className="flex items-center space-x-2">
-                <Image
-                  className="rounded-full"
-                  src={urlFor(post.author.image && post.author.image).url()}
-                  alt={post.authorName}
-                  height={40}
-                  width={40}
-                />
+                {post.author.image && (
+                  <Image
+                    className="rounded-full"
+                    src={urlFor( post.author.image).url()}
+                    alt={post.authorName}
+                    height={40}
+                    width={40}
+                  />
+                )}
 
                 <div className="w-64">
                   <h3 className="text-lg font-bold">{post.author.name}</h3>

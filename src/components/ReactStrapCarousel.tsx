@@ -50,22 +50,23 @@ function ReactStrapCarousel({ carouselPosts }: CarouselProps) {
 
       >
         <ClientSideRoute route={`/post/${item.slugCurrent}`} key={item.slugCurrent}>
-
-          <Image
-            className='
-              w-full
-              h-full
-              lg:object-center
-              object-cover
-              object-center
-              rounded-lg
-              '
-            src={urlFor(item.mainImage && item.mainImage).url()}
-            // width={200}
-            // height={200}
-            alt={item.authorName}
-            fill={true}
-          />
+          {item.mainImage && (
+            <Image
+              className='
+                w-full
+                h-full
+                lg:object-center
+                object-cover
+                object-center
+                rounded-lg
+                '
+              src={urlFor(item.mainImage).url()}
+              // width={200}
+              // height={200}
+              alt={item.authorName}
+              fill={true}
+            />
+          )}
 
           <div className='
                   absolute 
