@@ -30,7 +30,7 @@ export const carouselQuery = groq`*[_type == "post"]{
 
 
 // ! Author's api
-export const authorBlogListQuery = groq`*[_type == "post" && author->slug.current == $name]{
+export const authorBlogListQuery = groq`*[_type == "post" && author->slug.current == $name && categories != "about-us" && categories != "announcement"]{
     ...,  
     "slugCurrent": slug.current,
     "authorSlug": author->slug.current,

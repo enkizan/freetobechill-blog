@@ -9,6 +9,8 @@ type blogListProps = {
     listPosts: Post[]
 }
 
+export const revalidate = 60;
+
 export default function HomeBlogList({ listPosts }: blogListProps) {
     return (
         <div>
