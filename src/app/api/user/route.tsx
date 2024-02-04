@@ -16,8 +16,8 @@ export async function POST(req: NextRequest){
     // Example URL : http://localhost:3000/api/user?testParam=123TestParam
     // Curl TEST : curl -X POST "http://localhost:3000/api/user?testParam=123TestParam" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"test-body\":\"5566\"}"
     const body = await req.json();
-    console.log("body", body);
-    console.log("Log: POST Test");
+    // console.log("body", body);
+    // console.log("Log: POST Test");
 
     return new Response("OK")
 }

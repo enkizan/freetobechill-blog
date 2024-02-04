@@ -7,8 +7,28 @@ import HomeBlogList from '@/components/HomeBlogList'
 import { blogListQuery,carouselQuery } from '@/components/api'
 import { client } from '@/lib/sanity.client'
 
+interface Props {
+  params: {
+      slug: string;
+  };
+}
 
-export default async function IndexPage() {
+export const revalidate = 60; // revalidate this page every 60 seconds
+
+export async function generateStaticParams() {
+  
+    const slugs: Post[] = await client.fetch(blogListQuery);
+    const slugRoutes = slugs.map((item) => item.slugCurrent);
+  
+    return slugRoutes.map((slug) => ({
+      params: {
+        slug: slug,
+      },
+    }));
+  }
+
+
+export default async function IndexPage({ params: { slug }}: Props) {
   const previewDrafts = process.env.SANITY_API_PREVIEW_DRAFTS === 'true'
   const data = await sanityFetch<number>({previewDrafts,query: documentsCountQuery, tags: ['post']})
   const blogListData = await client.fetch(blogListQuery)

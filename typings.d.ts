@@ -9,6 +9,7 @@ type Base = {
 interface Post extends Base {
     author: Author;
     authorName: string;
+    authorSlug: string;
     body: Block[];
     categories: Category[];
     mainImage: Image;

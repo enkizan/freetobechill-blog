@@ -9,8 +9,22 @@ interface PageProps {
     }
 }
 
+export const revalidate = 60; // revalidate this page every 60 seconds
+
+export async function generateStaticParams() {
+  const slugs: Post[] = await client.fetch(authorBlogListQuery, { name: "$name" });
+  const slugRoutes = slugs.map((item) => item.authorSlug);
+
+  return slugRoutes.map((authorSlug) => ({
+    params: {
+      name: authorSlug,
+    },
+  }));
+}
+
 
 async function page({params: {name}}: PageProps) {
+console.log("name", name);
 
     const blogListData = await client.fetch(authorBlogListQuery,{name: name})
 
