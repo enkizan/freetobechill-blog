@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 import {draftMode} from 'next/headers'
 import {token} from '../../lib/sanity.fetch'
 import 'bootstrap/dist/css/bootstrap.css';
+import Footer from '@/components/Footer'
 // import StudioNavbarTest from '@/components/StudioNavbarTEST'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,10 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* <body className={inter.className}> */}
-      <body className="pt-8 item-center justify-center max-w-6xl mx-auto ">
+      <body className=" pt-0 item-center justify-center max-w-6xl mx-auto min-h-full ">
         <HomeHeader/>
         <Navbar/>
-        {/* <hr className=' mb-10 mx-10' /> */}
+        <hr className=' mb-10 mx-10' />
         {/* <StudioNavbarTest/> */}
           {/* {children} */}
           {draftMode().isEnabled ? (
@@ -36,6 +37,8 @@ export default function RootLayout({
           ) : (
             children
           )}
+          <hr className=' mb-10 mx-10' />
+          <Footer />
           </body>
     </html>
   )

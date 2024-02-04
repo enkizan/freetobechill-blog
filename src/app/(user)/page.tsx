@@ -4,14 +4,15 @@ import DocumentsCount, {documentsCountQuery} from '../../components/DocumentsCou
 import PreviewDocumentsCount from '../../components/PreviewDocumentsCount'
 import {sanityFetch} from '../../lib/sanity.fetch'
 import HomeBlogList from '@/components/HomeBlogList'
+import { blogListQuery,carouselQuery } from '@/components/api'
 import { client } from '@/lib/sanity.client'
-import { blogListQuery } from '@/components/api'
 
 
 export default async function IndexPage() {
   const previewDrafts = process.env.SANITY_API_PREVIEW_DRAFTS === 'true'
   const data = await sanityFetch<number>({previewDrafts,query: documentsCountQuery, tags: ['post']})
   const blogListData = await client.fetch(blogListQuery)
+  const carouselQueryData = await client.fetch(carouselQuery)
 
 
 
@@ -38,7 +39,7 @@ export default async function IndexPage() {
         as={PreviewDocumentsCount}
       >
         <div>Show Bloglist4</div>
-      <HomeBlogList listPosts={blogListData as Post[]} />
+      <HomeBlogList listPosts={blogListData as Post[]} carouselPosts={carouselQueryData as Post[]}  />
       </LiveQuery>
 
 
@@ -46,10 +47,10 @@ export default async function IndexPage() {
     ) 
   }else{
     return (
-      <div>
+      <div className='min-h-screen'>
         {/* <div>Not in preview mode </div> */}
         {/* <DocumentsCount data={data} /> */}
-        <HomeBlogList listPosts={blogListData as Post[]} />
+        <HomeBlogList listPosts={blogListData as Post[]} carouselPosts={carouselQueryData as Post[]} />
 
 
       </div>

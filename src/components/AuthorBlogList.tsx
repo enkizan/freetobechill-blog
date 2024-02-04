@@ -1,5 +1,4 @@
 import { urlFor } from '@/lib/urlFor';
-import {groq} from 'next-sanity';
 import Image from 'next/image';
 import  ClientSideRoute  from '@/components/ClientSideRoute';
 
@@ -14,10 +13,9 @@ type authorBlogListProps = {
 
 
 export default function AuthorBlogList({author , posts}: authorBlogListProps) {
-  return (
+    return (
 <div>
 
-<hr className=' mb-10 mx-10'/>
 {/* <h1 className='px-12 gap-10 '>Home Blog List</h1> */}
 <div 
 className='grid grid-cols-1 lg:grid-cols-2 px-10 gap-10 gap-y-0 sm:gap-y-16 pb-24'

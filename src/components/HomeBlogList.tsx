@@ -6,16 +6,16 @@ import ReactStrapCarousel from './ReactStrapCarousel';
 
 type blogListProps = {
 
-    listPosts: Post[]
+    listPosts: Post[],
+    carouselPosts: Post[]
 }
 
 export const revalidate = 60;
 
-export default function HomeBlogList({ listPosts }: blogListProps) {
+export default function HomeBlogList({ listPosts, carouselPosts }: blogListProps) {
     return (
         <div>
 
-            {/* <h1 className='px-12 gap-10 '>Home Blog List</h1> */}
 
             {/* Carousell */}
             <div
@@ -24,16 +24,28 @@ export default function HomeBlogList({ listPosts }: blogListProps) {
                 hidden
                 sm:block
                 '>
-                <ReactStrapCarousel carouselPosts={listPosts}  />
+                <h1 className='
+                m-10
+                indent-2
+                text-2xl
+                text-stone-500
+                '> Feature Posts </h1>
+                <ReactStrapCarousel carouselPosts={carouselPosts}  />
             </div>
 
+            <h1 className='
+            mx-10
+            mb-10
+            indent-2
+            text-2xl
+            text-stone-500
+            '> Latest Posts </h1>
 
             <div
                 className='grid grid-cols-1 lg:grid-cols-2 px-10 gap-10 gap-y-0 sm:gap-y-16 pb-24'
             >
                 {/* <HomeCarousel carouselPosts={listPosts} /> */}
                 {/* <SecondExample /> */}
-
                 {listPosts.map((post) => (
                     <ClientSideRoute route={`/post/${post.slugCurrent}`} key={post.slugCurrent}>
                         {/* <div>TEST SLUG: {post.slug}</div> */}

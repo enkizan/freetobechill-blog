@@ -58,7 +58,6 @@ function ReactStrapCarousel({ carouselPosts }: CarouselProps) {
                 lg:object-center
                 object-cover
                 object-center
-                rounded-lg
                 '
               src={urlFor(item.mainImage).url()}
               // width={200}
@@ -120,20 +119,7 @@ function ReactStrapCarousel({ carouselPosts }: CarouselProps) {
             >{item.description}
             </div>
 
-            {/* <p className=' text-sm sm:text-l font-thin px-3 '>{
-              new Date(item.publishedAt).toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}</p> */}
           </div>
-          {/* <h1>TTTTTTSDFSAFSAFDSAFDSF</h1> */}
-
-          {/* <CarouselCaption
-            className=" text-danger line-clamp-2 "
-            captionText={item.slugCurrent}
-            captionHeader={item.title}
-          /> */}
 
 
         </ClientSideRoute>
