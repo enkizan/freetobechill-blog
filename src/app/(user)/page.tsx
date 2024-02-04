@@ -49,7 +49,7 @@ export default async function IndexPage() {
       <div>
         {/* <div>Not in preview mode </div> */}
         {/* <DocumentsCount data={data} /> */}
-        <HomeBlogList listPosts={blogListData as Post[]} />
+        {/* <HomeBlogList listPosts={blogListData as Post[]} /> */}
 
 
       </div>
